@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "bierner.github-markdown-preview",
+    "oxc.oxc-vscode",
+    "eamodio.gitlens",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "github.vscode-github-actions",
+    "idered.npm",
+    "marbos.prettier-more",
+    "streetsidesoftware.code-spell-checker",
+    "vitest.explorer"
+  ]
+}
