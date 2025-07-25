@@ -1,0 +1,24 @@
+name: Manage GitHub labels
+description: Add and remove specified GitHub labels
+
+inputs:
+  labels-to-add:
+    description: Comma-separated list of labels to add
+    required: true
+    default: ''
+  labels-to-remove:
+    description: Comma-separated list of labels to remove
+    required: true
+    default: ''
+  github-token:
+    description: GitHub token
+    required: true
+    default: ''
+
+outputs:
+  markdown-message:
+    description: Markdown message describing a summary of labels added & removed
+
+runs:
+  using: node20
+  main: ../../../dist/index.js

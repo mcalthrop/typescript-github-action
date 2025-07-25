@@ -1,0 +1,5 @@
+pnpm ts-check
+pnpm lint
+pnpm format:check
+pnpm test
+pnpm build

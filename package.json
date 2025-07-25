@@ -1,0 +1,50 @@
+{
+  "name": "typescript-github-action-example",
+  "version": "0.0.0",
+  "description": "Example of a GitHub action written in TypeScript",
+  "repository": "https://github.com/mcalthrop/typescript-github-action-example",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "execute": "node dist/index",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format:check": "NODE_OPTIONS='--experimental-strip-types' prettier . --check",
+    "format:fix": "NODE_OPTIONS='--experimental-strip-types' prettier . --write",
+    "test": "vitest run --coverage",
+    "test:ui": "vitest --coverage --ui",
+    "test:watch": "vitest --coverage",
+    "ts-check": "tsc --build --force --verbose",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "typescript",
+    "github",
+    "action"
+  ],
+  "author": "Matt Calthrop <matt@calthrop.com>",
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "pnpm": "10.13.1",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "node": "22.17.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@actions/core": "1.11.1",
+    "@actions/github": "6.0.1",
+    "@tsconfig/node22": "22.0.2",
+    "@tsconfig/recommended": "1.0.10",
+    "@types/node": "24.1.0",
+    "@vitest/coverage-istanbul": "3.2.4",
+    "@vitest/ui": "3.2.4",
+    "husky": "9.1.7",
+    "oxlint": "1.8.0",
+    "prettier": "3.6.2",
+    "typescript": "5.8.3",
+    "vite": "7.0.6",
+    "vitest": "3.2.4",
+    "yup": "1.6.1"
+  }
+}
