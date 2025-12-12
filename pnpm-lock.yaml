@@ -18,8 +18,8 @@ importers:
         specifier: 22.0.5
         version: 22.0.5
       '@tsconfig/recommended':
-        specifier: 1.0.10
-        version: 1.0.10
+        specifier: 1.0.13
+        version: 1.0.13
       '@types/node':
         specifier: 24.6.2
         version: 24.6.2
@@ -518,8 +518,8 @@ packages:
   '@tsconfig/node22@22.0.5':
     resolution: {integrity: sha512-hLf2ld+sYN/BtOJjHUWOk568dvjFQkHnLNa6zce25GIH+vxKfvTgm3qpaH6ToF5tu/NN0IH66s+Bb5wElHrLcw==}
 
-  '@tsconfig/recommended@1.0.10':
-    resolution: {integrity: sha512-cGvydvg03lONp5Z9yaplW493Vw9/um7k588mvDkm+VFPF2PZUVPx0uswq4PFpeEySsLbQRETrDRhzh4Dmxaslw==}
+  '@tsconfig/recommended@1.0.13':
+    resolution: {integrity: sha512-sySRuBfMKyKO/j2ZAhR8kSembhjuPEV4Ra3AHtmWLq51+iGaudr45crPSzNC5b7/Ctrh9dfUpBuTlYrH6rM58Q==}
 
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
@@ -1486,7 +1486,7 @@ snapshots:
 
   '@tsconfig/node22@22.0.5': {}
 
-  '@tsconfig/recommended@1.0.10': {}
+  '@tsconfig/recommended@1.0.13': {}
 
   '@types/chai@5.2.2':
     dependencies:
