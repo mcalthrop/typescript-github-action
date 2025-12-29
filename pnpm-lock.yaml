@@ -18,8 +18,8 @@ importers:
         specifier: ^2.3.10
         version: 2.3.10
       '@tsconfig/node24':
-        specifier: 24.0.0
-        version: 24.0.0
+        specifier: 24.0.3
+        version: 24.0.3
       '@tsconfig/recommended':
         specifier: 1.0.13
         version: 1.0.13
@@ -532,8 +532,8 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@tsconfig/node24@24.0.0':
-    resolution: {integrity: sha512-3/6Cr4dELEAucgPIr6ufY7yBYMi4ttZFOewABADNZ+bm4DUZl4dup2VBcBeP1ejj3QblrWVWux/1XcRv/ZVikA==}
+  '@tsconfig/node24@24.0.3':
+    resolution: {integrity: sha512-vcERKtKQKHgzt/vfS3Gjasd8SUI2a0WZXpgJURdJsMySpS5+ctgbPfuLj2z/W+w4lAfTWxoN4upKfu2WzIRYnw==}
 
   '@tsconfig/recommended@1.0.13':
     resolution: {integrity: sha512-sySRuBfMKyKO/j2ZAhR8kSembhjuPEV4Ra3AHtmWLq51+iGaudr45crPSzNC5b7/Ctrh9dfUpBuTlYrH6rM58Q==}
@@ -1343,7 +1343,7 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@tsconfig/node24@24.0.0': {}
+  '@tsconfig/node24@24.0.3': {}
 
   '@tsconfig/recommended@1.0.13': {}
 
