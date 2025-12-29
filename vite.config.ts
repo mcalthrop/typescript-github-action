@@ -1,6 +1,6 @@
-import type { UserConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
-export default {
+export default defineConfig({
   build: {
     ssr: true,
     outDir: 'dist',
@@ -30,4 +30,4 @@ export default {
       requireAssertions: true,
     },
   },
-} satisfies UserConfig;
+});
