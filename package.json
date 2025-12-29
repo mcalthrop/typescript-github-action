@@ -7,21 +7,17 @@
   "scripts": {
     "build": "vite build",
     "execute": "node dist/index",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
-    "format:check": "NODE_OPTIONS='--experimental-strip-types' prettier . --check",
-    "format:fix": "NODE_OPTIONS='--experimental-strip-types' prettier . --write",
+    "lint": "biome lint",
+    "lint:fix": "biome lint --write",
+    "format": "biome format",
+    "format:fix": "biome format --write",
     "test": "vitest run --coverage",
     "test:ui": "vitest --coverage --ui",
     "test:watch": "vitest --coverage",
     "ts-check": "tsc --build --force --verbose",
     "prepare": "husky"
   },
-  "keywords": [
-    "typescript",
-    "github",
-    "action"
-  ],
+  "keywords": ["typescript", "github", "action"],
   "author": "Matt Calthrop <matt@calthrop.com>",
   "packageManager": "pnpm@10.13.1",
   "engines": {
@@ -34,14 +30,13 @@
   "devDependencies": {
     "@actions/core": "2.0.1",
     "@actions/github": "6.0.1",
+    "@biomejs/biome": "^2.3.10",
     "@tsconfig/node24": "24.0.0",
     "@tsconfig/recommended": "1.0.13",
     "@types/node": "24.10.4",
     "@vitest/coverage-istanbul": "4.0.16",
     "@vitest/ui": "4.0.16",
     "husky": "9.1.7",
-    "oxlint": "1.36.0",
-    "prettier": "3.7.4",
     "typescript": "5.9.3",
     "vite": "7.3.0",
     "vitest": "4.0.16",

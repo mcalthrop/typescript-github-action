@@ -1,7 +1,7 @@
-import { Context } from '@actions/github/lib/context';
-import type { GithubIssueLabel } from './types';
-import { getGithubIssueNumber } from './get-github-issue-number';
 import { getOctokit } from '@actions/github';
+import { Context } from '@actions/github/lib/context';
+import { getGithubIssueNumber } from './get-github-issue-number';
+import type { GithubIssueLabel } from './types';
 
 export type GetGithubIssueLabelsArgs = {
   gitHubToken: string;

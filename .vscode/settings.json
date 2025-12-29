@@ -1,18 +1,17 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "never",
-    "source.fixAll.oxc": "explicit"
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.biome": "explicit"
   },
   "editor.formatOnSave": true,
   "editor.formatOnPaste": false,
   "typescript.preferences.importModuleSpecifier": "shortest",
   "cSpell.language": "en-GB",
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "marbos.prettier-more"
-  },
   "typescript.tsdk": "node_modules/typescript/lib",
   "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts,dist/**}",
   "vitest.filesWatcherInclude": "**/*.spec.ts*",
-  "vitest.shellType": "terminal"
+  "vitest.shellType": "terminal",
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

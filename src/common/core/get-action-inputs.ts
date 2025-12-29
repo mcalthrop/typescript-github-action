@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
-import type { ActionInputsSchema } from '../types';
 import type { InferType } from 'yup';
+import type { ActionInputsSchema } from '../types';
 
 export const getActionInputs = <AIS extends ActionInputsSchema>(
   actionInputsSchema: AIS,

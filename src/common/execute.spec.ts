@@ -1,8 +1,8 @@
-import * as yup from 'yup';
 import { describe, expect, it, vi } from 'vitest';
-import { execute } from './execute';
+import * as yup from 'yup';
 import { getActionInputs } from './core/get-action-inputs';
 import { setActionOutputs } from './core/set-action-outputs';
+import { execute } from './execute';
 
 vi.mock('./core/get-action-inputs');
 vi.mock('./core/set-action-outputs');

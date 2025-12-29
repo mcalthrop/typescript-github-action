@@ -1,8 +1,8 @@
-import type { ActionInputs, ActionInputsSchema, ActionOutputs } from './index';
-import type { Action } from './common/types';
-import { addGithubIssueLabels } from './common/github/add-github-issue-labels';
 import { getLabelsFromInput } from './common/get-labels-from-input';
+import { addGithubIssueLabels } from './common/github/add-github-issue-labels';
 import { removeGithubIssueLabels } from './common/github/remove-github-issue-labels';
+import type { Action } from './common/types';
+import type { ActionInputs, ActionInputsSchema, ActionOutputs } from './index';
 
 export const action: Action<ActionInputsSchema, ActionOutputs> = async (
   actionInputs: ActionInputs,

@@ -1,6 +1,6 @@
-import type { Action, ActionInputsSchema, ActionOutputs } from './types';
 import { getActionInputs } from './core/get-action-inputs';
 import { setActionOutputs } from './core/set-action-outputs';
+import type { Action, ActionInputsSchema, ActionOutputs } from './types';
 
 export const execute = async <
   AIS extends ActionInputsSchema,
