@@ -1,9 +1,9 @@
-import { describe, expect, it, vi } from 'vitest';
+import { getOctokit } from '@actions/github';
 import { Context } from '@actions/github/lib/context';
-import type { Octokit } from './types';
+import { describe, expect, it, vi } from 'vitest';
 import { addGithubIssueLabels } from './add-github-issue-labels';
 import { getGithubIssueNumber } from './get-github-issue-number';
-import { getOctokit } from '@actions/github';
+import type { Octokit } from './types';
 
 vi.mock('@actions/github');
 vi.mock('./get-github-issue-number');

@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from 'vitest';
-import type { ActionInputs } from './index';
 import { action } from './action';
-import { addGithubIssueLabels } from './common/github/add-github-issue-labels';
 import { getLabelsFromInput } from './common/get-labels-from-input';
+import { addGithubIssueLabels } from './common/github/add-github-issue-labels';
 import { removeGithubIssueLabels } from './common/github/remove-github-issue-labels';
+import type { ActionInputs } from './index';
 
 vi.mock('./common/github/add-github-issue-labels');
 vi.mock('./common/github/remove-github-issue-labels');

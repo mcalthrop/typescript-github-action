@@ -1,6 +1,6 @@
+import { getOctokit } from '@actions/github';
 import { Context } from '@actions/github/lib/context';
 import { getGithubIssueNumber } from './get-github-issue-number';
-import { getOctokit } from '@actions/github';
 
 export type AddGithubIssueLabelsArgs = {
   labels: Array<string>;

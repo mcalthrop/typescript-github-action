@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
-import * as yup from 'yup';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import * as yup from 'yup';
 import { getActionInputs } from './get-action-inputs';
 
 vi.mock('@actions/core');

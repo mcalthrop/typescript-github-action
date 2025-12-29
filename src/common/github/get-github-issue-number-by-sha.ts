@@ -1,5 +1,5 @@
-import { Context } from '@actions/github/lib/context';
 import { getOctokit } from '@actions/github';
+import { Context } from '@actions/github/lib/context';
 
 export type GetGithubIssueNumberByShaArgs = {
   sha: string;
