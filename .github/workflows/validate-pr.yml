@@ -29,7 +29,7 @@ jobs:
       - name: Lint
         run: pnpm lint
       - name: Format
-        run: pnpm format:check
+        run: pnpm format
       - name: Test
         run: pnpm test
       - name: Build
@@ -38,8 +38,8 @@ jobs:
         id: manage-labels
         uses: ./.github/actions/manage-github-labels
         with:
-          labels-to-add: 'pr-in-progress, testing'
-          labels-to-remove: 'merged'
+          labels-to-add: "pr-in-progress, testing"
+          labels-to-remove: "merged"
           github-token: ${{ github.token }}
 
       - name: Add message to summary
