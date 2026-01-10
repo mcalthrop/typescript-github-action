@@ -19,9 +19,9 @@
   },
   "keywords": ["typescript", "github", "action"],
   "author": "Matt Calthrop <matt@calthrop.com>",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.28.0",
   "engines": {
-    "pnpm": "10.13.1",
+    "pnpm": "10.28.0",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
     "node": "24.12.0"
