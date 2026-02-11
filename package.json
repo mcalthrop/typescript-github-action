@@ -24,7 +24,7 @@
     "pnpm": "10.13.1",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
-    "node": "24.12.0"
+    "node": "24.13.1"
   },
   "license": "MIT",
   "devDependencies": {
@@ -33,7 +33,7 @@
     "@biomejs/biome": "^2.3.10",
     "@tsconfig/node24": "24.0.3",
     "@tsconfig/recommended": "1.0.13",
-    "@types/node": "24.10.4",
+    "@types/node": "24.10.13",
     "@vitest/coverage-istanbul": "4.0.16",
     "@vitest/ui": "4.0.16",
     "husky": "9.1.7",
