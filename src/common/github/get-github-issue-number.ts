@@ -1,7 +1,7 @@
 import * as github from '@actions/github';
 import { getGithubIssueNumberBySha } from './get-github-issue-number-by-sha';
 
-export type GetGithubIssueNumberArgs = {
+type GetGithubIssueNumberArgs = {
   gitHubToken: string;
 };
 

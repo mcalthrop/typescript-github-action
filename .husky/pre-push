@@ -1,3 +1,4 @@
+pnpm knip
 pnpm check
 pnpm ts-check
 pnpm test

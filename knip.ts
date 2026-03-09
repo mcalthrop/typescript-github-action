@@ -1,0 +1,32 @@
+import type { KnipConfig } from 'knip';
+
+const config: KnipConfig = {
+  entry: [],
+  project: ['src/**'],
+  includeEntryExports: true,
+  rules: {
+    binaries: 'error',
+    classMembers: 'error',
+    dependencies: 'error',
+    devDependencies: 'error',
+    duplicates: 'error',
+    enumMembers: 'error',
+    exports: 'error',
+    files: 'error',
+    nsExports: 'error',
+    nsTypes: 'error',
+    types: 'error',
+    unlisted: 'error',
+    unresolved: 'error',
+  },
+
+  // --- BEGIN PLUGINS ---
+  biome: true,
+  'github-actions': true,
+  husky: true,
+  typescript: true,
+  vitest: true,
+  // --- END PLUGINS ---
+};
+
+export default config;
