@@ -1,12 +1,19 @@
 import { getOctokit } from '@actions/github';
-import { Context } from '@actions/github/lib/context';
 import { describe, expect, it, vi } from 'vitest';
 import { getGithubIssueLabels } from './get-github-issue-labels';
 import { getGithubIssueNumber } from './get-github-issue-number';
 import { removeGithubIssueLabels } from './remove-github-issue-labels';
 import type { Octokit } from './types';
 
-vi.mock('@actions/github');
+vi.mock('@actions/github', () => ({
+  getOctokit: vi.fn(),
+  context: {
+    repo: {
+      owner: 'test-owner',
+      repo: 'test-repo',
+    },
+  },
+}));
 vi.mock('./get-github-issue-number');
 vi.mock('./get-github-issue-labels');
 
@@ -19,10 +26,6 @@ vi.mocked(getOctokit).mockReturnValue({
     },
   },
 } as unknown as Octokit);
-vi.spyOn(Context.prototype, 'repo', 'get').mockReturnValue({
-  owner: 'test-owner',
-  repo: 'test-repo',
-});
 vi.mocked(getGithubIssueLabels).mockResolvedValue([
   {
     name: 'label1',

@@ -1,10 +1,17 @@
 import { getOctokit } from '@actions/github';
-import { Context } from '@actions/github/lib/context';
 import { describe, expect, it, vi } from 'vitest';
 import { getGithubIssueNumberBySha } from './get-github-issue-number-by-sha';
 import type { Octokit } from './types';
 
-vi.mock('@actions/github');
+vi.mock('@actions/github', () => ({
+  getOctokit: vi.fn(),
+  context: {
+    repo: {
+      owner: 'test-owner',
+      repo: 'test-repo',
+    },
+  },
+}));
 
 const issuesAndPullRequestsMock = vi.fn();
 vi.mocked(getOctokit).mockReturnValue({
@@ -14,11 +21,6 @@ vi.mocked(getOctokit).mockReturnValue({
     },
   },
 } as unknown as Octokit);
-vi.spyOn(Context.prototype, 'repo', 'get').mockReturnValue({
-  owner: 'test-owner',
-  repo: 'test-repo',
-});
-
 const sha = 'test-sha';
 const gitHubToken = 'test-token';
 
