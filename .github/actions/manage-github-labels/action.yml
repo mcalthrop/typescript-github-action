@@ -5,20 +5,20 @@ inputs:
   labels-to-add:
     description: Comma-separated list of labels to add
     required: true
-    default: ''
+    default: ""
   labels-to-remove:
     description: Comma-separated list of labels to remove
     required: true
-    default: ''
+    default: ""
   github-token:
     description: GitHub token
     required: true
-    default: ''
+    default: ""
 
 outputs:
   markdown-message:
     description: Markdown message describing a summary of labels added & removed
 
 runs:
-  using: node20
+  using: node24
   main: ../../../dist/index.js

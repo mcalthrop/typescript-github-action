@@ -16,23 +16,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
+
       - name: Set up pnpm
         uses: pnpm/action-setup@v4.2.0
+
       - name: Set up Node
         uses: actions/setup-node@v6.3.0
         with:
           node-version: 24.14.0 # Must match engines.node in package.json
           cache: pnpm
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
+
       - name: Build
         run: pnpm build
+
       - name: Manage labels
         id: manage-labels
         uses: ./.github/actions/manage-github-labels
         with:
-          labels-to-add: 'merged'
-          labels-to-remove: 'pr-in-progress, testing'
+          labels-to-add: "merged"
+          labels-to-remove: "pr-in-progress, testing"
           github-token: ${{ github.token }}
 
       - name: Add message to summary
