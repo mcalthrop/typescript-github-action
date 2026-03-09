@@ -1,6 +1,6 @@
 import { context, getOctokit } from '@actions/github';
 
-export type GetGithubIssueNumberByShaArgs = {
+type GetGithubIssueNumberByShaArgs = {
   sha: string;
   gitHubToken: string;
 };

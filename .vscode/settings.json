@@ -1,17 +1,21 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
-    "source.fixAll.biome": "explicit"
-  },
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": false,
-  "typescript.preferences.importModuleSpecifier": "shortest",
-  "cSpell.language": "en-GB",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts,dist/**}",
-  "vitest.filesWatcherInclude": "**/*.spec.ts*",
-  "vitest.shellType": "terminal",
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
-  }
+  },
+  "cSpell.language": "en-GB",
+  "cSpell.words": [
+    "calthrop",
+    "knip"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "js/ts.preferences.importModuleSpecifier": "shortest",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "vitest.configSearchPatternExclude": "{**/node_modules/**,**/.*/**,**/*.d.ts,dist/**}",
+  "vitest.filesWatcherInclude": "**/*.spec.ts*",
+  "vitest.shellType": "terminal"
 }

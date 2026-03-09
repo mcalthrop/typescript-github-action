@@ -2,7 +2,7 @@ import { context, getOctokit } from '@actions/github';
 import { getGithubIssueLabels } from './get-github-issue-labels';
 import { getGithubIssueNumber } from './get-github-issue-number';
 
-export type RemoveGithubIssueLabelsArgs = {
+type RemoveGithubIssueLabelsArgs = {
   labels: Array<string>;
   gitHubToken: string;
 };
