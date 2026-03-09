@@ -1,5 +1,4 @@
-import { getOctokit } from '@actions/github';
-import { Context } from '@actions/github/lib/context';
+import { context, getOctokit } from '@actions/github';
 
 export type GetGithubIssueNumberByShaArgs = {
   sha: string;
@@ -13,14 +12,14 @@ export const getGithubIssueNumberBySha = async ({
   const octokit = getOctokit(gitHubToken);
   const {
     repo: { owner, repo },
-  } = new Context();
+  } = context;
 
   // https://octokit.github.io/rest.js/v22/#search-issues-and-pull-requests
   const {
     data: { items },
   } = await octokit.rest.search.issuesAndPullRequests({
     q: `repo:${owner}/${repo} is:merged ${sha}`,
-    advanced_search: true,
+    advanced_search: 'true',
   });
 
   if (items.length === 0) {

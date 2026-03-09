@@ -1,5 +1,4 @@
-import { getOctokit } from '@actions/github';
-import { Context } from '@actions/github/lib/context';
+import { context, getOctokit } from '@actions/github';
 import { getGithubIssueLabels } from './get-github-issue-labels';
 import { getGithubIssueNumber } from './get-github-issue-number';
 
@@ -29,7 +28,7 @@ export const removeGithubIssueLabels = async ({
   const octokit = getOctokit(gitHubToken);
   const {
     repo: { owner, repo },
-  } = new Context();
+  } = context;
 
   for (const labelToRemove of labelsToRemove) {
     // https://octokit.github.io/rest.js/v22/#issues-remove-label

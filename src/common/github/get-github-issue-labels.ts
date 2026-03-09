@@ -1,5 +1,4 @@
-import { getOctokit } from '@actions/github';
-import { Context } from '@actions/github/lib/context';
+import { context, getOctokit } from '@actions/github';
 import { getGithubIssueNumber } from './get-github-issue-number';
 import type { GithubIssueLabel } from './types';
 
@@ -13,7 +12,7 @@ export const getGithubIssueLabels = async ({
   const octokit = getOctokit(gitHubToken);
   const {
     repo: { owner, repo },
-  } = new Context();
+  } = context;
   const issueNumber = await getGithubIssueNumber({ gitHubToken });
 
   // https://octokit.github.io/rest.js/v22/#issues-list-labels-on-issue
