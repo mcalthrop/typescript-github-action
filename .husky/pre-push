@@ -1,5 +1,4 @@
+pnpm check
 pnpm ts-check
-pnpm format
-pnpm lint
 pnpm test
 pnpm build

@@ -15,25 +15,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
+
       - name: Set up pnpm
         uses: pnpm/action-setup@v4.2.0
+
       - name: Set up Node
         uses: actions/setup-node@v6.3.0
         with:
           node-version: 24.14.0 # Must match engines.node in package.json
           cache: pnpm
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
+
       - name: TypeScript check
         run: pnpm ts-check
-      - name: Lint
-        run: pnpm lint
-      - name: Format
-        run: pnpm format
+
+      - name: Lint & format
+        run: pnpm check
+
       - name: Test
         run: pnpm test
+
       - name: Build
         run: pnpm build
+
       - name: Manage labels
         id: manage-labels
         uses: ./.github/actions/manage-github-labels

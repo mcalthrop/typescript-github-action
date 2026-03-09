@@ -7,10 +7,8 @@
   "scripts": {
     "build": "vite build",
     "execute": "node dist/index",
-    "lint": "biome lint",
-    "lint:fix": "biome lint --write",
-    "format": "biome format",
-    "format:fix": "biome format --write",
+    "check": "biome check",
+    "check:fix": "biome check --write",
     "test": "vitest run --coverage",
     "test:ui": "vitest --coverage --ui",
     "test:watch": "vitest --coverage",
@@ -30,7 +28,7 @@
   "devDependencies": {
     "@actions/core": "3.0.0",
     "@actions/github": "9.0.0",
-    "@biomejs/biome": "^2.3.10",
+    "@biomejs/biome": "2.4.6",
     "@tsconfig/node24": "24.0.4",
     "@tsconfig/recommended": "1.0.13",
     "@types/node": "24.12.0",
