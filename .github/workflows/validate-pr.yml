@@ -19,10 +19,17 @@ jobs:
       - name: Set up pnpm
         uses: pnpm/action-setup@v4.2.0
 
-      - name: Set up Node
+      - name: Get node version
+        id: get-node-version
+        run: |
+          NODE_VERSION=$(cat .nvmrc)
+          echo "NODE_VERSION=${NODE_VERSION}"
+          echo "node-version=${NODE_VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Set up node ${{ steps.get-node-version.outputs.node-version }}
         uses: actions/setup-node@v6.3.0
         with:
-          node-version: 24.14.0 # Must match engines.node in package.json
+          node-version: ${{ steps.get-node-version.outputs.node-version }}
           cache: pnpm
 
       - name: Install dependencies
