@@ -52,10 +52,10 @@ Key places to look:
 ### Preparation
 
 Install the version of `pnpm` specified in the `engines.pnpm` field of `package.json`:
-https://pnpm.io/installation#installing-a-specific-version
+<https://pnpm.io/installation#installing-a-specific-version>
 
 Install `nvm`:
-https://github.com/nvm-sh/nvm#readme
+<https://github.com/nvm-sh/nvm#readme>
 
 ### Setup
 
