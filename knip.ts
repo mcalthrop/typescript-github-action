@@ -5,12 +5,12 @@ const config: KnipConfig = {
   includeEntryExports: true,
   rules: {
     binaries: 'error',
-    classMembers: 'error',
     dependencies: 'error',
     devDependencies: 'error',
     duplicates: 'error',
     enumMembers: 'error',
     exports: 'error',
+    namespaceMembers: 'error',
     files: 'error',
     nsExports: 'error',
     nsTypes: 'error',
