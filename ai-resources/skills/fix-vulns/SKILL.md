@@ -1,7 +1,6 @@
 ---
 name: fix-vulns
 description: Check for vulnerabilities with an audit command and raise a PR to fix them. Use when the user asks to "fix vulnerabilities", "fix vulns", "audit dependencies", or "fix security issues".
-disable-model-invocation: true
 allowed-tools: Bash
 ---
 
@@ -31,19 +30,34 @@ Check for dependency vulnerabilities and raise a PR that addresses all of them.
 | `npm`           | `npm audit`       |
 
 ```bash
-"${SHELL:-/bin/sh}" -i -c "<audit-command>"
+"${SHELL:-/bin/bash}" -i -c "<audit-command>"
 ```
 
 3. If no vulnerabilities are found, report that and stop.
 
-4. If vulnerabilities are found, fetch the latest `main` and create a branch:
+4. If vulnerabilities are found, fetch the latest `main` and create a worktree:
 
 ```bash
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+REPO_NAME="$(basename "${REPO_ROOT}")"
+WORKTREE_PATH="${REPO_ROOT}/../${REPO_NAME}-fix-security-vulnerabilities"
 git fetch origin main
-git checkout -b fix/security-vulnerabilities origin/main
+if [[ -e "${WORKTREE_PATH}" ]]; then
+  git worktree remove --force "${WORKTREE_PATH}" || {
+    echo "Failed to remove existing worktree at ${WORKTREE_PATH}. Resolve it and retry." >&2
+    exit 1
+  }
+fi
+if git show-ref --verify --quiet refs/heads/fix/security-vulnerabilities; then
+  git branch --delete --force fix/security-vulnerabilities || {
+    echo "Failed to delete existing branch fix/security-vulnerabilities. Resolve it and retry." >&2
+    exit 1
+  }
+fi
+git worktree add -b fix/security-vulnerabilities "${WORKTREE_PATH}" origin/main
 ```
 
-5. For each vulnerable package identified in the audit output, update it to the minimum safe version using the appropriate command:
+5. For each vulnerable package identified in the audit output, update it to the minimum safe version using the appropriate command. Run all subsequent commands from within `${WORKTREE_PATH}`.
 
 | Package manager | Update command |
 | --------------- | -------------- |
@@ -53,7 +67,7 @@ git checkout -b fix/security-vulnerabilities origin/main
 | `npm`           | `update`       |
 
 ```bash
-"${SHELL:-/bin/sh}" -i -c "<package-manager> <update-command> <package-name>"
+"${SHELL:-/bin/bash}" -i -c "<package-manager> <update-command> <package-name>"
 ```
 
 If the required safe version exceeds the current semver range in `package.json`, update the range in `package.json` first, then re-run the update command.
@@ -81,13 +95,13 @@ Example for `pnpm`:
 Then run install to apply the override:
 
 ```bash
-"${SHELL:-/bin/sh}" -i -c "<package-manager> install"
+"${SHELL:-/bin/bash}" -i -c "<package-manager> install"
 ```
 
 6. Re-run the audit to confirm all vulnerabilities are resolved:
 
 ```bash
-"${SHELL:-/bin/sh}" -i -c "<audit-command>"
+"${SHELL:-/bin/bash}" -i -c "<audit-command>"
 ```
 
 7. Commit the changes, staging only the lock file and `package.json`:
@@ -97,4 +111,14 @@ git add <lock-file> package.json
 git commit -m "fix(deps): resolve audit vulnerabilities"
 ```
 
-8. Push the branch and raise a draft PR. The PR body must list every vulnerability that was fixed, including package name, severity, and the resolution applied.
+8. Push the branch from within the worktree and raise a draft PR:
+
+```bash
+cd "${WORKTREE_PATH}"
+git push --set-upstream origin fix/security-vulnerabilities
+gh pr create --draft --title "fix(deps): resolve audit vulnerabilities" --body "..."
+```
+
+The PR body must list every vulnerability that was fixed, including package name, severity, and the resolution applied.
+
+The worktree will be removed as part of the post-merge steps.

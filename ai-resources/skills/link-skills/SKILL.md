@@ -1,7 +1,6 @@
 ---
 name: link-skills
 description: Link all skills from the ai-resources directory into .claude/skills/. Use when the user asks to "link skills", "set up skills from ai-resources", or "link to all skills in the ai-resources directory".
-disable-model-invocation: true
 allowed-tools: Bash
 ---
 
