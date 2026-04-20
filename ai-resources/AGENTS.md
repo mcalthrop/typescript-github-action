@@ -1,0 +1,3 @@
+# Codex instructions
+
+@CLAUDE.md
