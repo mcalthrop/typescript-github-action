@@ -27,7 +27,7 @@ jobs:
           echo "node-version=${NODE_VERSION}" >> $GITHUB_OUTPUT
 
       - name: Set up node ${{ steps.get-node-version.outputs.node-version }}
-        uses: actions/setup-node@v6.3.0
+        uses: actions/setup-node@v6.4.0
         with:
           node-version: ${{ steps.get-node-version.outputs.node-version }}
           cache: pnpm
