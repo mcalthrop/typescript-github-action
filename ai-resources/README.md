@@ -19,12 +19,15 @@ git checkout -b chore/add-ai-resources
 TMP_DIR="$(mktemp --directory)"
 curl --location https://github.com/mcalthrop/ai-resources/archive/refs/heads/main.tar.gz \
   | tar --extract --gzip --strip-components=1 --directory "$TMP_DIR"
+rm -rf ai-resources
 mv "$TMP_DIR" ai-resources
 git add ai-resources
 git commit -m "chore: add ai-resources snapshot"
 ```
 
-Create a branch first so the addition is reviewable via a PR.
+Then ask Claude to create a PR:
+
+> create a pr
 
 ### Import all rules and skills
 

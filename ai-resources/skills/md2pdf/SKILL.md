@@ -2,7 +2,6 @@
 name: md2pdf
 description: Convert a Markdown file to PDF. Use when the user asks to convert a .md file to PDF, generate a PDF from Markdown, or run md-to-pdf.
 argument-hint: <input.md>
-disable-model-invocation: true
 allowed-tools: Bash
 ---
 
