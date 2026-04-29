@@ -35,7 +35,7 @@
     }
   },
   "devDependencies": {
-    "@actions/core": "3.0.0",
+    "@actions/core": "3.0.1",
     "@actions/github": "9.1.0",
     "@biomejs/biome": "2.4.12",
     "@tsconfig/node24": "24.0.4",
