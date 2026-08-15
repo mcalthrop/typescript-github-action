@@ -30,7 +30,7 @@
     "@actions/core": "3.0.1",
     "@actions/github": "9.1.1",
     "@biomejs/biome": "2.5.5",
-    "@tsconfig/node24": "24.0.4",
+    "@tsconfig/node24": "24.0.5",
     "@tsconfig/recommended": "1.0.13",
     "@types/node": "24.13.3",
     "@vitest/coverage-istanbul": "4.1.10",
